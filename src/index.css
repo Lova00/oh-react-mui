@@ -3,3 +3,21 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+div[class*="MuiGrid-grid-xs-6-53"]{
+  max-width: 100%!important;
+  flex-basis: 100%!important;
+}
+
+@media (min-width: 960px){
+div [class*="MuiGrid-grid-md-2-75"]{
+    max-width: 16.66667%!important;
+    flex-basis: 16.66667%!important;
+  }
+
+  #resize{
+    width: 100%!important;
+    margin-left: 30%!important;
+  }
+}
+
