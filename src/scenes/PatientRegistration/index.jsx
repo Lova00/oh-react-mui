@@ -246,24 +246,23 @@ class AppFrame extends React.Component {
 
                     {/* RIGHT SUBCOLOUMN */}
                     <Grid item xs={12} sm={6}>
-                      {/* SEX SELECT */}
+                      {/* TEST SELECT */}
                       <FormControl required className={classes.formControl}
                                    style={{
                                      marginBottom: "40px",
                                      marginTop: "20px"
                                    }}
                       >
-                        <InputLabel required htmlFor="sex-native-simple">Sex</InputLabel>
+                        <InputLabel required htmlFor="test-native">Select one or many test from the list</InputLabel>
                         <Select
                           native
-                          //onChange={this.handleChange('age')}
                           inputProps={{
-                            id: 'sex-native-simple',
+                            id: 'test-native',
                           }}
                         >
                           <option value=""/>
-                          <option value={"M"}>M</option>
-                          <option value={"F"}>F</option>
+                          <option value={"TEST1"}>TEST 1</option>
+                          <option value={"TEST2"}>TEST 2</option>
                         </Select>
                       </FormControl>
                       <br/>
