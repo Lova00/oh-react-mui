@@ -19,13 +19,13 @@ import {
 import { InsertPhoto, PhotoCamera } from "@material-ui/icons/es/index";
 import Avatar from '@material-ui/core/Avatar';
 import Switch from '@material-ui/core/Switch';
-import {Person} from '@material-ui/icons/es/index';
-import {index} from '../../index.css';
+import { Person } from '@material-ui/icons/es/index';
+import { index } from '../../index.css';
 import Divider from '@material-ui/core/Divider';
 
 const styles = theme => ({
- 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////
   appFramePaper:
     theme.mixins.gutters({
       paddingTop: 16,
@@ -86,13 +86,13 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     color: "white",
-    width:" 10px",
+    width: " 10px",
   },
 
   titleDoctor: {
-   
-   
-    marginTop:"10px",
+
+
+    marginTop: "10px",
     color: "white",
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
@@ -100,8 +100,8 @@ const styles = theme => ({
   },
 
   titleDoctor2: {
-   
-    marginTop:"-10px",
+
+    marginTop: "-10px",
     color: "white",
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
@@ -109,22 +109,22 @@ const styles = theme => ({
   },
 
   titleDoctor3: {
-   
+
     marginLeft: "80px",
-    marginTop:"-36px",
+    marginTop: "-36px",
     color: "white",
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
 
   },
-   number: {
+  number: {
     // fontSize: "30px",
-     color: "white",
-     marginLeft: theme.spacing.unit,
-     marginRight: theme.spacing.unit,
-     marginTop: "-25px",
+    color: "white",
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    marginTop: "-25px",
   },
-///////////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////////
   bigAvatar: {
     width: '100px',
     height: '100px',
@@ -145,27 +145,27 @@ const styles = theme => ({
     marginRight: theme.spacing.unit,
     //src:""
   },
-  
+
   Switch: {
     color: "white",
-    },
-  
+  },
+
 });
 
 class PatientVisit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        checkedA: false,
+      checkedA: false,
     };
   }
 
   componentDidMount = () => {
-    setTimeout( ()=>{
+    setTimeout(() => {
       console.log('Setting checkboxes to true')
       this.setState({
         checkedA: true,
-        })
+      })
     }, 2000)
   }
 
@@ -183,95 +183,95 @@ class PatientVisit extends React.Component {
             <Paper elevation={4} className={classes.appFramePaper}>
               <WelcomeBar path={"Home / Patient Registration"} txt={""} />
               <Grid container spacing={24} className={classes.containerWhite}>
-                <Grid item xs={6} md={2} className={"mobile-view-large"} style={{backgroundColor: "black"}}>
-               <div id="resize">
-                <div id="resizeTop">
-               <div id="icon">
-                <Person style={{color : "white", marginLeft:"75%"}}/>
-                </div>
-                <div id="resizeAvatar1">
-                <Avatar
-                       className={className(classes.bigAvatar)}
-                 />
-                 </div>
-                 <h6 className={classes.titlesWhite}>HEALTH INFORMATION </h6>
-                 <h6 className={classes.titlesWhite}>Patient ID </h6>
-                 <h1 className={classes.number}> 32040 </h1>
-                 <h6 className={classes.titlesWhite}>OPD</h6>
-                 <h1 className={classes.number}> 8937821 </h1>
-                 <h6 className={classes.titlesWhite}>Blood Group </h6>
-                 <h1 className={classes.number}> A+ </h1>
+                <Grid item xs={6} md={2} className={"mobile-view-large"} style={{ backgroundColor: "black" }}>
+                  <div id="resize">
+                    <div id="resizeTop">
+                      <div id="icon">
+                        <Person style={{ color: "white", marginLeft: "75%" }} />
+                      </div>
+                      <div id="resizeAvatar1">
+                        <Avatar
+                          className={className(classes.bigAvatar)}
+                        />
+                      </div>
+                      <h6 className={classes.titlesWhite}>HEALTH INFORMATION </h6>
+                      <h6 className={classes.titlesWhite}>Patient ID </h6>
+                      <h1 className={classes.number}> 32040 </h1>
+                      <h6 className={classes.titlesWhite}>OPD</h6>
+                      <h1 className={classes.number}> 8937821 </h1>
+                      <h6 className={classes.titlesWhite}>Blood Group </h6>
+                      <h1 className={classes.number}> A+ </h1>
 
-                 <h6 className={classes.titlesWhite}>
-                 
-                 Notes
-                 <div id= "resizeList">
-                 <ul>
-                   <li>Pneumonia and malnutrition</li>
-                   <li>Grasses, Gluten</li>
-                </ul>
-                </div>
-                </h6>
-                <FormControlLabel 
-                  control ={
-                    <Switch className={classes.Switch}
-                    checked={this.state.checkedA}
-                    onChange={this.handleChange}
-                  
-                    value="checkedA" />   
-                   }
-                  
-                   
-                    label = { <h6 className={classes.titlesWhite}>Cronic Patient </h6>}
-                   />  
-                   </div>
-                   <div>
-                     
-                     <Divider style={{backgroundColor: "white"}}/>
-                   </div>
-                   <div id="resizeBottom">
+                      <h6 className={classes.titlesWhite}>
 
-                    <h6 className={classes.titlesWhite}>Last admission: 22.01.2016</h6>
-                    <h6 className={classes.titlesWhite}>Reason for visit: Pneumonia and malnutrition</h6>
-                    <h6 className={classes.titlesWhite}>Treatment made: Pneumond malnutrition</h6>
+                        Notes
+                 <div id="resizeList">
+                          <ul>
+                            <li>Pneumonia and malnutrition</li>
+                            <li>Grasses, Gluten</li>
+                          </ul>
+                        </div>
+                      </h6>
+                      <FormControlLabel
+                        control={
+                          <Switch className={classes.Switch}
+                            checked={this.state.checkedA}
+                            onChange={this.handleChange}
+
+                            value="checkedA" />
+                        }
 
 
-                    <h6 className={classes.titlesWhite}>Last doctor who visit the patient</h6>
-                    <div className={classes.all}>
-                     <div id="resizeAvatar2">
-                      <Avatar className={classes.Avatar1}>
-                    </Avatar>
+                        label={<h6 className={classes.titlesWhite}>Cronic Patient </h6>}
+                      />
                     </div>
                     <div>
-                    <h6 className={classes.titleDoctor}>Dr. Meredith Greys</h6> </div>  
-                   
-                    <h6 className={classes.titleDoctor2}>Pneumologis</h6> 
-                    <br /> 
-                    <h6 className={classes.titleDoctor3}> 34538290432</h6>
-                    </div>
 
-                   
-                   </div>
-                   </div>
-        
-        
+                      <Divider style={{ backgroundColor: "white" }} />
+                    </div>
+                    <div id="resizeBottom">
+
+                      <h6 className={classes.titlesWhite}>Last admission: 22.01.2016</h6>
+                      <h6 className={classes.titlesWhite}>Reason for visit: Pneumonia and malnutrition</h6>
+                      <h6 className={classes.titlesWhite}>Treatment made: Pneumond malnutrition</h6>
+
+
+                      <h6 className={classes.titlesWhite}>Last doctor who visit the patient</h6>
+                      <div className={classes.all}>
+                        <div id="resizeAvatar2">
+                          <Avatar className={classes.Avatar1}>
+                          </Avatar>
+                        </div>
+                        <div>
+                          <h6 className={classes.titleDoctor}>Dr. Meredith Greys</h6> </div>
+
+                        <h6 className={classes.titleDoctor2}>Pneumologis</h6>
+                        <br />
+                        <h6 className={classes.titleDoctor3}> 34538290432</h6>
+                      </div>
+
+
+                    </div>
+                  </div>
+
+
                 </Grid>
 
 
                 <Grid item xs={12} md={10} >
-                fgdrgdrgdrgdrg
-                Drdfgdfg
+                  fgdrgdrgdrgdrg
+                  Drdfgdfg
                 <dfn><dfn>df
-                  gfd
-                  g
+                    gfd
+                    g
                   fd</dfn></dfn>
                 </Grid>
               </Grid>
             </Paper>
           </Grid>
         </Grid>
-     
-    </div>
+
+      </div>
     )
   }
 }
