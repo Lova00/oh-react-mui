@@ -21,6 +21,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Switch from '@material-ui/core/Switch';
 import {Person} from '@material-ui/icons/es/index';
 import {index} from '../../index.css';
+import Divider from '@material-ui/core/Divider';
 
 const styles = theme => ({
  
@@ -90,9 +91,11 @@ const styles = theme => ({
 
   titleDoctor: {
    
-    marginLeft: "60px",
-    marginTop:"-25px",
+   
+    marginTop:"10px",
     color: "white",
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
 
   },
 
@@ -100,14 +103,18 @@ const styles = theme => ({
    
     marginTop:"-10px",
     color: "white",
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
 
   },
 
   titleDoctor3: {
    
-    marginLeft: "70px",
+    marginLeft: "80px",
     marginTop:"-36px",
     color: "white",
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
 
   },
    number: {
@@ -176,15 +183,17 @@ class PatientVisit extends React.Component {
             <Paper elevation={4} className={classes.appFramePaper}>
               <WelcomeBar path={"Home / Patient Registration"} txt={""} />
               <Grid container spacing={24} className={classes.containerWhite}>
-                <Grid item xs={6} md={2} style={{backgroundColor: "black"}}>
-               
-                <div>
-                <Person style={{color : "white", marginLeft:"80%"}}/>
+                <Grid item xs={6} md={2} className={"mobile-view-large"} style={{backgroundColor: "black"}}>
+               <div id="resize">
+                <div id="resizeTop">
+               <div id="icon">
+                <Person style={{color : "white", marginLeft:"75%"}}/>
                 </div>
-                <div id="resize">
+                <div id="resizeAvatar1">
                 <Avatar
                        className={className(classes.bigAvatar)}
                  />
+                 </div>
                  <h6 className={classes.titlesWhite}>HEALTH INFORMATION </h6>
                  <h6 className={classes.titlesWhite}>Patient ID </h6>
                  <h1 className={classes.number}> 32040 </h1>
@@ -194,11 +203,14 @@ class PatientVisit extends React.Component {
                  <h1 className={classes.number}> A+ </h1>
 
                  <h6 className={classes.titlesWhite}>
+                 
                  Notes
+                 <div id= "resizeList">
                  <ul>
                    <li>Pneumonia and malnutrition</li>
                    <li>Grasses, Gluten</li>
                 </ul>
+                </div>
                 </h6>
                 <FormControlLabel 
                   control ={
@@ -211,8 +223,13 @@ class PatientVisit extends React.Component {
                   
                    
                     label = { <h6 className={classes.titlesWhite}>Cronic Patient </h6>}
-                   /> 
-                   
+                   />  
+                   </div>
+                   <div>
+                     
+                     <Divider style={{backgroundColor: "white"}}/>
+                   </div>
+                   <div id="resizeBottom">
 
                     <h6 className={classes.titlesWhite}>Last admission: 22.01.2016</h6>
                     <h6 className={classes.titlesWhite}>Reason for visit: Pneumonia and malnutrition</h6>
@@ -221,27 +238,24 @@ class PatientVisit extends React.Component {
 
                     <h6 className={classes.titlesWhite}>Last doctor who visit the patient</h6>
                     <div className={classes.all}>
+                     <div id="resizeAvatar2">
                       <Avatar className={classes.Avatar1}>
                     </Avatar>
+                    </div>
+                    <div>
                     <h6 className={classes.titleDoctor}>Dr. Meredith Greys</h6> </div>  
-                   <div>
-                    <h6 className={classes.titleDoctor2}>Pneumologis</h6>  
+                   
+                    <h6 className={classes.titleDoctor2}>Pneumologis</h6> 
+                    <br /> 
                     <h6 className={classes.titleDoctor3}> 34538290432</h6>
                     </div>
 
                    
                    </div>
+                   </div>
         
         
                 </Grid>
-
-
-
-
-
-
-
-
 
 
                 <Grid item xs={12} md={10} >
@@ -256,7 +270,8 @@ class PatientVisit extends React.Component {
             </Paper>
           </Grid>
         </Grid>
-      </div>
+     
+    </div>
     )
   }
 }
