@@ -1,22 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { withStyles } from '@material-ui/core/styles';
 import {
   Button,
   Checkbox,
   FormControl,
-  FormControlLabel,
   Grid,
   Paper,
   Select,
   TextField
 } from '@material-ui/core';
 import {
-  Divider,
-  ExpansionPanel,
-  ExpansionPanelDetails,
-  FormGroup,
   ListItemText,
   MenuItem,
   Input,
@@ -25,7 +19,6 @@ import Header from '../../components/Header/index';
 import WelcomeBar from '../../components/WelcomeBar/index';
 import ChatFloatingPopup from '../../components/ChatFloatingPopup/index';
 import Sidebar from '../../components/PatientSidebar';
-import InputLabel from '@material-ui/core/InputLabel';
 
 const styles = theme => ({
   appFramePaper:
