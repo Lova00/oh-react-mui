@@ -8,19 +8,8 @@ import {
     Grid,
     Paper,
     Select,
-    TextField
 } from '@material-ui/core';
-import NativeSelect from '@material-ui/core/NativeSelect';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-
-import {
-    ListItemText,
-    MenuItem,
-    Input,
-} from "@material-ui/core/es/index";
 import Header from '../../components/Header/index';
 import WelcomeBar from '../../components/WelcomeBar/index';
 import ChatFloatingPopup from '../../components/ChatFloatingPopup/index';
@@ -41,16 +30,6 @@ const styles = theme => ({
         margin: theme.spacing.unit,
         width: '44%',
     },
-    formControl: {
-        margin: theme.spacing.unit,
-        minWidth: 120,
-    },
-
-    textField: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
-        width: '93%',
-    },
     marginRight: {
         marginRight: theme.spacing.unit * 2,
     },
@@ -59,52 +38,41 @@ const styles = theme => ({
         boxShadow: '0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12)',
         marginBottom: '70px',
     },
-    titles: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
-    },
-    title: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
-        margin: 0,
-    },
+
     titleResult: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        marginTop: "8%",
-    },
-    selectResult: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
-        marginLeft: "15%",
-        marginTop: "-6%",
+        marginTop: "7%",
+
     },
 
-    titleResult2: {
+    resultTitle: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        margin: "7%",
-    },
-    firstTitle: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
-        marginTop: "5px",
+        marginTop: "30px",
         width: "30%",
     },
     checkControl: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        marginTop: "-6%",
+        marginTop: "-7%",
+        marginLeft: "15%",
+        width: "60%",
+    },
+    formControl: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        marginTop: "-7%",
         marginLeft: "15%",
         width: "60%",
     },
 
-    formControl2: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
-        marginTop: "-6%",
-        marginLeft: "15%",
-        width: "60%",
+    leftAlign: {
+        marginLeft: "10%",
+    },
+
+    marginTop: {
+        marginTop: "10%",
     },
 });
 
@@ -114,27 +82,19 @@ class LaboratoryTestRisultato extends React.Component {
         this.state = {
             checkedNO: true,
             checkedCronic: true,
-            result: [],
+            result: '',
         };
-
-
         this.handleChangeTransport = this.handleChangeTransport.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
-
     handleChange = name => event => {
         this.setState({ [name]: event.target.value });
-      };
+    };
     handleChangeTransport = name => event => {
         this.setState({ [name]: event.target.checked });
     };
-
-
-
-
     render() {
         const { classes } = this.props;
-
         return (
             <div>
                 <Grid container justify='center' alignItems='stretch'>
@@ -158,11 +118,11 @@ class LaboratoryTestRisultato extends React.Component {
                                 {/* RIGHT SUBCOLOUM */}
                                 <Grid item xs={12} md={10}>
                                     <h4 style={{ color: "rgb(121, 126, 132)" }}>COMPLETE THE FORM IN ORDER TO INSERT LABORATORY TEST RESULTS</h4>
-                                    <div id="result">
-                                        <h6 className={classes.titleResult}> Type 1* </h6>
+
+                                    <h6 className={classes.titleResult}> Type 1* </h6>
+                                    <div className={classes.leftAlign}>
                                         <div className={classes.selectResult}>
                                             <FormControl className={classes.formControl}>
-                                              
                                                 <Select
                                                     native
                                                     value={this.state.result}
@@ -172,20 +132,18 @@ class LaboratoryTestRisultato extends React.Component {
                                                         id: 'result-native',
                                                     }}
                                                 >
-                                                    <option value="" />
                                                     <option value={1}>Result 1</option>
                                                     <option value={2}>Result 2</option>
                                                     <option value={3}>Result 3</option>
+                                                    <option value={4}>Result N</option>
                                                 </Select>
                                             </FormControl>
+
                                         </div>
                                     </div>
-
-                                    <h6 className={classes.titleResult2}> Type 2* </h6>
-
-                                    <div id="first">
-                                        <div className={classes.firstTitle}>
-                                            <h5 className={classes.titleResult2}>1. Result</h5> </div>
+                                    <h6 className={classes.titleResult}>Type 2*</h6>
+                                    <div className={classes.leftAlign}>
+                                        <h5 className={classes.resultTitle}>1. Result</h5>
                                         <div className={classes.checkControl}>
                                             <FormControlLabel
                                                 control={
@@ -210,11 +168,7 @@ class LaboratoryTestRisultato extends React.Component {
                                                 label="No"
                                             />
                                         </div>
-
-                                    </div>
-                                    <div id="second">
-                                        <div className={classes.firstTitle}>
-                                            <h5 className={classes.titleResult2}>2. Result </h5> </div>
+                                        <h5 className={classes.resultTitle}>2. Result </h5>
                                         <div className={classes.checkControl}>
                                             <FormControlLabel
                                                 control={
@@ -239,11 +193,7 @@ class LaboratoryTestRisultato extends React.Component {
                                                 label="No"
                                             />
                                         </div>
-
-                                    </div>
-                                    <div id="third">
-                                        <div className={classes.firstTitle}>
-                                            <h5 className={classes.titleResult2}>3. Result </h5> </div>
+                                        <h5 className={classes.resultTitle}>3. Result </h5>
                                         <div className={classes.checkControl}>
                                             <FormControlLabel
                                                 control={
@@ -270,98 +220,110 @@ class LaboratoryTestRisultato extends React.Component {
                                         </div>
                                     </div>
                                     <h6 className={classes.titleResult}> Type 3* </h6>
-                                    <div>
-                                    <div className={classes.firstTitle}>
-                                    <h5 className={classes.titleResult2}>Result 1</h5></div> 
-                                    <div className={classes.formControl2}>
-                                    <FormControl >
-                                              
-                                              <Select
-                                                  native
-                                                  value={this.state.result1}
-                                                  onChange={this.handleChange('result1')}
-                                                  inputProps={{
-                                                      name: 'result1',
-                                                      id: 'result1-native',
-                                                  }}
-                                              >
-                                                  <option value="" />
-                                                  <option value={1}>1</option>
-                                                  <option value={2}>2</option>
-                                                  <option value={3}>3</option>
-                                                  <option value={4}>4</option>
-                                                  <option value={5}>5</option>
-                                                  <option value={6}>6</option>
-                                                  <option value={7}>7</option>
-                                                  <option value={8}>8</option>
-                                                  <option value={9}>9</option>
-                                                  <option value={10}>10</option>
-                                              </Select>
-                                          </FormControl>
-                                          </div>
-                                          </div>
+                                    <div className={classes.leftAlign}>
+                                        <h5 className={classes.resultTitle}>Result 1</h5>
+                                        <div className={classes.formControl}>
+                                            <FormControl >
+                                                <Select
+                                                    native
+                                                    value={this.state.result1}
+                                                    onChange={this.handleChange('result1')}
+                                                    inputProps={{
+                                                        name: 'result1',
+                                                        id: 'result1-native',
+                                                    }}
+                                                >
+                                                    <option value="" />
+                                                    <option value={1}>1</option>
+                                                    <option value={2}>2</option>
+                                                    <option value={3}>3</option>
+                                                    <option value={4}>4</option>
+                                                    <option value={5}>5</option>
+                                                    <option value={6}>6</option>
+                                                    <option value={7}>7</option>
+                                                    <option value={8}>8</option>
+                                                    <option value={9}>9</option>
+                                                    <option value={10}>10</option>
+                                                </Select>
+                                            </FormControl>
+                                        </div>
+                                        <h5 className={classes.resultTitle}>Result 2</h5>
+                                        <div className={classes.formControl}>
+                                            <FormControl >
+                                                <Select
+                                                    native
+                                                    value={this.state.result2}
+                                                    onChange={this.handleChange('result2')}
+                                                    inputProps={{
+                                                        name: 'result2',
+                                                        id: 'result2-native',
+                                                    }}
+                                                >
+                                                    <option value="" />
+                                                    <option value={1}>1</option>
+                                                    <option value={2}>2</option>
+                                                    <option value={3}>3</option>
+                                                    <option value={4}>4</option>
+                                                    <option value={5}>5</option>
+                                                    <option value={6}>6</option>
+                                                    <option value={7}>7</option>
+                                                    <option value={8}>8</option>
+                                                    <option value={9}>9</option>
+                                                    <option value={10}>10</option>
+                                                </Select>
+                                            </FormControl>
+                                        </div>
+                                        <h5 className={classes.resultTitle}>Result 3</h5>
+                                        <div className={classes.formControl}>
+                                            <FormControl >
+                                                <Select
+                                                    native
+                                                    value={this.state.result3}
+                                                    onChange={this.handleChange('result3')}
+                                                    inputProps={{
+                                                        name: 'result3',
+                                                        id: 'result3-native',
+                                                    }}
+                                                >
+                                                    <option value="" />
+                                                    <option value={1}>1</option>
+                                                    <option value={2}>2</option>
+                                                    <option value={3}>3</option>
+                                                    <option value={4}>4</option>
+                                                    <option value={5}>5</option>
+                                                    <option value={6}>6</option>
+                                                    <option value={7}>7</option>
+                                                    <option value={8}>8</option>
+                                                    <option value={9}>9</option>
+                                                    <option value={10}>10</option>
+                                                </Select>
+                                            </FormControl>
+                                        </div>
+                                    </div>
+                                    <div className={classes.marginTop}>
+                                        {/* SAVE AND START VISIT BUTTON */}
+                                        <Button variant="raised" component="span"
+                                            className={classes.buttonInlineDuo}
+                                            style={{
+                                                marginTop: "15px",
+                                                backgroundColor: "rgba(239, 156, 102, 1)",
+                                                color: "#FFFFFF",
+                                            }}>
 
-                                           <div>
-                                    <div className={classes.firstTitle}>
-                                    <h5 className={classes.titleResult2}>Result 2</h5></div>
-                                    <div className={classes.formControl2}>
-                                    <FormControl >
-                                              
-                                              <Select
-                                                  native
-                                                  value={this.state.result2}
-                                                  onChange={this.handleChange('result2')}
-                                                  inputProps={{
-                                                      name: 'result2',
-                                                      id: 'result2-native',
-                                                  }}
-                                              >
-                                                  <option value="" />
-                                                  <option value={1}>1</option>
-                                                  <option value={2}>2</option>
-                                                  <option value={3}>3</option>
-                                                  <option value={4}>4</option>
-                                                  <option value={5}>5</option>
-                                                  <option value={6}>6</option>
-                                                  <option value={7}>7</option>
-                                                  <option value={8}>8</option>
-                                                  <option value={9}>9</option>
-                                                  <option value={10}>10</option>
-                                              </Select>
-                                          </FormControl>
-                                          </div>
-                                          </div>
 
-                                           <div>
-                                    <div className={classes.firstTitle}>
-                                    <h5 className={classes.titleResult2}>Result 3</h5></div>
-                                    <div className={classes.formControl2}>
-                                    <FormControl >
-                                              
-                                              <Select
-                                                  native
-                                                  value={this.state.result3}
-                                                  onChange={this.handleChange('result3')}
-                                                  inputProps={{
-                                                      name: 'result3',
-                                                      id: 'result3-native',
-                                                  }}
-                                              >
-                                                  <option value="" />
-                                                  <option value={1}>1</option>
-                                                  <option value={2}>2</option>
-                                                  <option value={3}>3</option>
-                                                  <option value={4}>4</option>
-                                                  <option value={5}>5</option>
-                                                  <option value={6}>6</option>
-                                                  <option value={7}>7</option>
-                                                  <option value={8}>8</option>
-                                                  <option value={9}>9</option>
-                                                  <option value={10}>10</option>
-                                              </Select>
-                                          </FormControl>
-                                          </div>
-                                          </div>
+                                            Save and start a visit >
+                                     </Button>
+                                        {/* SAVE THE INFORMATION */}
+                                        <Button variant="raised" component="span"
+                                            className={classes.buttonInlineDuo}
+                                            style={{
+                                                marginTop: "15px",
+                                                borderColor: '#rgba(239, 156, 102, 1)',
+                                                color: "rgba(239, 156, 102, 1)"
+                                            }}>
+                                            Save the information ›
+                                  </Button>
+                                    </div>
                                 </Grid>
                             </Grid>
                         </Paper>
@@ -372,16 +334,15 @@ class LaboratoryTestRisultato extends React.Component {
         );
     }
 }
-
 LaboratoryTestRisultato.defaultProps = {
     patientName: 'Modotoky Tokaiia',
     provenance: 'District, Village',
 };
-
 LaboratoryTestRisultato.propTypes = {
     classes: PropTypes.object.isRequired,
     patientName: PropTypes.string.isRequired,
     provenance: PropTypes.string.isRequired,
 };
+
 
 export default withStyles(styles)(LaboratoryTestRisultato);
