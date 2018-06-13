@@ -1,7 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles/index';
-
 import { Person, Phone } from '@material-ui/icons';
 import { Avatar, Divider, FormControlLabel, Switch } from '@material-ui/core';
 
@@ -127,7 +125,6 @@ const PatientSidebar = (props) => {
     </div>
   );
 };
-
 // PatientSidebar.propTypes = {
 //   classes: PropTypes.object.isRequired,
 //   patientName: PropTypes.string,
@@ -146,5 +143,4 @@ const PatientSidebar = (props) => {
 //   doctorJob: PropTypes.string,
 //   doctorPhone: PropTypes.string,
 // };
-
 export default withStyles(styles)(PatientSidebar);

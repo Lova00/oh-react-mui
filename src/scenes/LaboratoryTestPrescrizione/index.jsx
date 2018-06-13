@@ -53,7 +53,6 @@ const styles = theme => ({
     boxShadow: '0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12)',
     marginBottom: '70px',
   },
- 
   title: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
@@ -72,7 +71,6 @@ class LaboratoryTestPrescrizione extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeSelect = this.handleChangeSelect.bind(this);
   }
-
   handleChangeSelect = event => {
     this.setState({ name: event.target.value });
   };
@@ -181,12 +179,10 @@ class LaboratoryTestPrescrizione extends React.Component {
     );
   }
 }
-
 LaboratoryTestPrescrizione.defaultProps = {
   patientName: 'Modotoky Tokaiia',
   provenance: 'District, Village',
 };
-
 LaboratoryTestPrescrizione.propTypes = {
   classes: PropTypes.object.isRequired,
   patientName: PropTypes.string.isRequired,
