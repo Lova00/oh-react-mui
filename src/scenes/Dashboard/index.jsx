@@ -2,7 +2,8 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 // import AppFrame from '../../components/AppFrame';
 //import PatientRegistration from '../PatientRegistration'
-import LaboratoryTestPrescrizione from '../LaboratoryTestPrescrizione';
+import Login from '../Login';
+//import LaboratoryTestPrescrizione from '../LaboratoryTestPrescrizione';
 //import PatientVisit from '../PatientVisit'
 //import LaboratoryTestRisultato from '../LaboratoryTestRisultato';
 const Dashboard = props => (
@@ -10,7 +11,8 @@ const Dashboard = props => (
     //<AppFrame username={props.username} hospitalName={props.hospitalName} />
     // <PatientRegistration username={props.username} hospitalName={props.hospitalName} />
     //<PatientVisit username={props.username} hospitalName={props.hospitalName} />
-    <LaboratoryTestPrescrizione username={props.username} hospitalName={props.hospitalName} />
+   // <LaboratoryTestPrescrizione username={props.username} hospitalName={props.hospitalName} />
    // <LaboratoryTestRisultato username = {props.username} hospitalName={props.hospitalName} />
+   <Login username = {props.username} hospitalName={props.hospitalName} />
 );
 export default Dashboard;
