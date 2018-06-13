@@ -1,10 +1,7 @@
 import React from 'react';
-
-import {Grid}from '@material-ui/core';
-
+import { Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import DashboardSection from '../DashboardSection';
-
 
 const styles = (theme) => {
 };
@@ -92,7 +89,7 @@ const LoginSummary = props => (
                     <div style={{ fontSize: "12px", color: "#666666", fontWeight: "700" }}>AVERAGE LOS* <br />(Length Of Stay)</div>
                 </Grid>
             </Grid>
-  
+
         </DashboardSection>
 
     </Grid>
