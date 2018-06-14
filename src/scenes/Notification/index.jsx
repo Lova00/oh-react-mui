@@ -3,22 +3,13 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {
   Button,
-  Checkbox,
-  FormControl,
   Grid,
   Paper,
-  Select,
-  TextField
-} from '@material-ui/core';
-import {
-  ListItemText,
-  MenuItem,
   Input,
-} from "@material-ui/core/es/index";
+} from '@material-ui/core';
 import Header from '../../components/Header/index';
 import WelcomeBar from '../../components/WelcomeBar/index';
 import ChatFloatingPopup from '../../components/ChatFloatingPopup/index';
-import Sidebar from '../../components/PatientSidebar';
 import Divider from '@material-ui/core/Divider';
 import CardNotification from '../../components/CardNotification';
 
@@ -34,6 +25,13 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     float: "right",
     marginTop: "-45px",
+  },
+
+  button2: {
+    margin: theme.spacing.unit,
+    marginLeft: "40%",
+    marginTop: "50px",
+    width: "20%",
   },
   buttonInlineDuo: {
     margin: theme.spacing.unit,
@@ -63,16 +61,13 @@ const styles = theme => ({
     marginRight: theme.spacing.unit,
     margin: 0,
   },
-
   leftAlign: {
     marginLeft: "10px",
     width: "30%",
   },
-  
   all: {
     width: "100%",
   },
-
   divider: {
     backgroundColor: "black",
   }
@@ -82,25 +77,11 @@ class Notification extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-     
+
     };
   }
-  
-
-
   render() {
-    // Select per laboratory tests
     const { classes } = this.props;
-    const ITEM_HEIGHT = 48;
-    const ITEM_PADDING_TOP = 8;
-    const MenuProps = {
-      PaperProps: {
-        style: {
-          maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-          width: 250
-        },
-      },
-    };
     return (
       <div>
         <Grid container justify='center' alignItems='stretch'>
@@ -116,26 +97,30 @@ class Notification extends React.Component {
                         </Button>
                   <Divider className={classes.divider} />
                 </div>
-
-             
-            
-             
-                
-                <CardNotification /> 
-                <CardNotification />
-                <CardNotification />
-                      
-                        
-
-
-
+                <CardNotification
+                  title={'Article1'}
+                  date={'29 September 2000'}
+                  article={'This impressive paella is a perfect party dish and a fun meal to cook together with your guests Add 1 cup of frozen peas along with the mussels, if you like  that was first spoken in early medieval England and i'}
+                  notes={'Follow the instructions to embed the icon font in your site and learn how to style your icons English is a West Germanic language that was first spoken in early medieval England and is now a global lingua franca. Named after the A'}
+                />
+                <CardNotification
+                  title={'Article2'}
+                  date={'29 October 2643'}
+                  article={'The English Composition sequence, part of Kents Core Requirements, is designed to introduce and provide experience in academic writing based upon the '}
+                  notes={'kipedia has an article on: description'} />
+                <CardNotification
+                  title={'Article3'}
+                  date={'55 October 2546'}
+                  article={'description definition: 1. something that tells you what something or someone is like: 2. of all types: 3. to be something that you cannot describe accurately .'}
+                  notes={'Six reference English levels defined by CEFR. Description and alignment with other English assessments- Cambridge, IELT'}
+                />
               </Grid>
+              <Button variant="outlined" className={classes.button2}>
+                LOAD MORE
+              </Button>
             </Paper>
           </Grid>
         </Grid>
-
-
-
         <ChatFloatingPopup />
       </div>
     );
