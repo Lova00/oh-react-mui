@@ -3,8 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { Grid, Paper } from '@material-ui/core';
 import LoginCredentials from '../../components/LoginCredentials';
 import LoginSummary from '../../components/LoginSummary';
-
-
+    
 const styles = theme => ({
     appFramePaper:
         theme.mixins.gutters({
