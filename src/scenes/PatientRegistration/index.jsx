@@ -71,7 +71,7 @@ const styles = theme => ({
   }
 });
 
-// Array per select gruppo sanguigno
+
 const bloodGroup = ["", "0+", "0-", "A+", "A-", "B+", "B-", "C+", "C-", "AB+", "AB-"];
 
 class AppFrame extends React.Component {
@@ -458,14 +458,6 @@ class AppFrame extends React.Component {
     )
   }
 }
-
-// AppFrame.defaultProps = {
-//   classes: {},
-//   title: 'HelpDesk',
-//   breadcrumbs: [],
-//   children: null,
-// };
-
 AppFrame.propTypes = {
   classes: PropTypes.object.isRequired
 };
